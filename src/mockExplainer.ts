@@ -1,4 +1,5 @@
 import type { AvailabilityResult } from './types';
+import { minutesToTime } from "./availability";
 
 /**
  * Mock LLM adapter for the "Explain Availability" feature.
@@ -67,7 +68,7 @@ function formatClock(min: number): string {
  */
 function composeExplanation(input: ExplainAvailabilityInput): ExplainAvailabilityResponse {
   const { roomLabel, start, end, result } = input;
-  const window = `${formatClock(start)}–${formatClock(end)}`;
+  window = `${minutesToTime(start)}–${minutesToTime(end)}`
 
   let explanation: string;
   if (result.available) {
