@@ -55,11 +55,7 @@ function isValidResponse(res: unknown): res is ExplainAvailabilityResponse {
   return text.length > 0 && text.length <= MAX_EXPLANATION_LENGTH;
 }
 
-function formatClock(min: number): string {
-  const h = Math.floor(min / 60);
-  const m = min % 60;
-  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-}
+
 
 /**
  * Builds the mock "LLM" reply. It only restates facts contained in the
