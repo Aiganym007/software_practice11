@@ -68,7 +68,7 @@ function formatClock(min: number): string {
  */
 function composeExplanation(input: ExplainAvailabilityInput): ExplainAvailabilityResponse {
   const { roomLabel, start, end, result } = input;
-  window = `${minutesToTime(start)}–${minutesToTime(end)}`
+  const window = `${minutesToTime(start)}–${minutesToTime(end)}`;
 
   let explanation: string;
   if (result.available) {
